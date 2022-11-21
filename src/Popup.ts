@@ -27,7 +27,7 @@ export class Popup {
 	/**
 	 * Создание переменных в классе, в объекте this
 	 */
-	 private initVars(): void {
+	private initVars(): void {
 		const popupNode = this.createPopupNode();
 		const popupCloseNode = popupNode.querySelector('.popup__close');
 		const popupBodyNode = popupNode.querySelector('.popup__body');
@@ -65,7 +65,7 @@ export class Popup {
 	/**
 	 * Добавить popupNode в body
 	 */
-	 private appendPopupNodeInBody(): void {
+	private appendPopupNodeInBody(): void {
 		// document.body - это узел из дерева, тег body, в самом JavaScript уже есть доступ к тегу body, его не надо искать с помощью document.querySelector('body')
 		document.body.append(this.nodes.popupNode);
 	}
@@ -75,14 +75,14 @@ export class Popup {
 
 		popupNode.classList.add('popup');
 		popupNode.innerHTML = `
-			<button class="popup__close">Close</button>
 			<div class="popup__body">
 				<div class="popup__content">
-						<h1 class="popup__title">${this.options.title || ''}</h1>
-						<p class="popup__description">${this.options.description || ''}</p>
-						<div class="popup__img-wrapper">
-							<img class="popup__img" src="${this.options.imgSrc}">
-						</div>
+					<span class="popup__close">x</span>
+					<h1 class="popup__title">${this.options.title || ''}</h1>
+					<p class="popup__description">${this.options.description || ''}</p>
+					<div class="popup__img-wrapper">
+						<img class="popup__img" src="${this.options.imgSrc}">
+					</div>
 				</div>
 			</div>
 		`;
@@ -123,12 +123,9 @@ export class Popup {
 		if (popupImgNode !== null && this.options.imgSrc !== undefined) {
 			popupImgNode.src = this.options.imgSrc;
 		}
-
 	}
 
 	public destroy(): void {
 		this.nodes.popupNode.remove();
 	}
-
-
 }
