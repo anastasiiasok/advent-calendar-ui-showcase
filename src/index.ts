@@ -13,10 +13,14 @@ for (const calendarValue of calendarValues) {
 	const calendarPopupNode = calendarValue.calendarPopupNode;
 	const calendarDayNode = calendarValue.calendarDayNode;
 	const node = calendarDayNode.querySelector('.calendar__day-preview')?.innerHTML.trim();
-	const currentDate = new Date().getDate();
 
 	if (calendarPopupNode && node !== undefined) {
-		if (+node === currentDate) {
+		const lol = localStorage.getItem('boxes_opened') || '';
+		if (lol && lol?.split(' ').includes(node)) {
+			// show previously opened nodes
+			calendarDayNode.classList.add('calendar__day_active');
+		}
+		if (+node) {
 			calendarDayNode.addEventListener('click', () => {
 
 				if (calendarDayNode.classList.contains('calendar__day_active')) {
@@ -29,12 +33,11 @@ for (const calendarValue of calendarValues) {
 					imgSrc: calendarValue.imgSrc
 				});
 				popup.open();
+				localStorage.setItem('boxes_opened', lol + ' ' + node);
 				popup.closeSubj.subscribe(item => {
 					calendarDayNode.classList.add('calendar__day_active');
 				});
 			});
-		} else if (+node < currentDate) {
-			calendarDayNode.classList.add('calendar__day_active');
 		} else {
 			calendarDayNode.classList.add('disabled');
 		}

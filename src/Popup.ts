@@ -111,7 +111,6 @@ export class Popup {
 		const popupTitleNode = this.nodes.popupTitleNode;
 		const popupDescriptionNode = this.nodes.popupDescriptionNode;
 		const popupImgNode = this.nodes.popupImgNode;
-
 		if (popupTitleNode !== null && this.options.title !== undefined) {
 			popupTitleNode.innerHTML = this.options.title;
 		}
