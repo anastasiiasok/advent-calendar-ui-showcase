@@ -15,8 +15,8 @@ for (const calendarValue of calendarValues) {
 	const node = calendarDayNode.querySelector('.calendar__day-preview')?.innerHTML.trim();
 
 	if (calendarPopupNode && node !== undefined) {
-		const lol = localStorage.getItem('boxes_opened') || '';
-		if (lol && lol?.split(' ').includes(node)) {
+		let boxesOpened = localStorage.getItem('boxes_opened') || '';
+		if (boxesOpened && boxesOpened?.split(',').includes(node)) {
 			// show previously opened nodes
 			calendarDayNode.classList.add('calendar__day_active');
 		}
@@ -33,7 +33,8 @@ for (const calendarValue of calendarValues) {
 					imgSrc: calendarValue.imgSrc
 				});
 				popup.open();
-				localStorage.setItem('boxes_opened', lol + ' ' + node);
+				boxesOpened = localStorage.getItem('boxes_opened') || '';
+				localStorage.setItem('boxes_opened', boxesOpened + ',' + node);
 				popup.closeSubj.subscribe(item => {
 					calendarDayNode.classList.add('calendar__day_active');
 				});
