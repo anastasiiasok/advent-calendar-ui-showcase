@@ -62,7 +62,7 @@ img {
 	min-height: 100%;
 	/* height: 100%; */
 	/* min-height: 100vh; */
-	background-image: url('./assets/img/ian-schneider-dqMxDqdhg_4-unsplash.jpg');
+	background-image: url('./assets/img/new-year.55c67293.jpeg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -70,6 +70,7 @@ img {
 
 .ornaments-container {
 	display: flex;
+	margin-left: 75px;
 }
 
 .ornament {
@@ -80,7 +81,7 @@ img {
 .box {
   float: left;
   height: 20px;
-  width: 20px;
+  width: 12px;
   margin-bottom: 15px;
 	background-image: url(https://img.freepik.com/free-photo/roughly-gold-painted-concrete-wall-surface-background_53876-110786.jpg?t=st=1670358003~exp=1670358603~hmac=b29ac9b59292aef408ba148ba557966230871ad2185c685556e06b6a4244086c);
   clear: both;
@@ -99,8 +100,8 @@ img {
 	font: 700 30px sans-serif;
 	display: flex;
 	position: relative;
-	left: -39.67%;
-	top: 10px;
+	left: -43.67%;
+	top: 8px;
 	box-shadow: inset 0 0 10px #000a;
 	-webkit-animation: ring 4s .7s ease-in-out infinite;
 	-webkit-transform-origin: 50% 4px;
@@ -420,7 +421,7 @@ img {
 	gap: 10px;
 	font-family: fantasy;
 	font-size: 35px;
-	color: black;
+	color: #fff;
 	font-weight: 700;
 }
 
