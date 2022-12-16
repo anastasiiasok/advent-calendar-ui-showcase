@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --public-url ./"
+    "build": "parcel build ./src/index.html --public-url https://anastasiiasok.github.io/advent-calendar-ui-showcase/"
   },
   "author": "",
   "license": "ISC",
